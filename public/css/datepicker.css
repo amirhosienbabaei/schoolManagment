@@ -1,0 +1,32 @@
+.datepicker {
+    font-family: Tahoma;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.datepicker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+.datepicker-cell {
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+.datepicker-cell:hover {
+    background: #f0f0f0;
+}
+.selected {
+    background: #007bff;
+    color: white;
+}

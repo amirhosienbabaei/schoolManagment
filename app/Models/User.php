@@ -11,18 +11,13 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-
+  
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
+   protected $guarded = [];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -45,4 +40,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+public function school()
+{
+    return $this->belongsTo(school::class);
+}
+
+
+
+public function student(){
+    return $this->hasOne(Student::class);
+}
+
+
+public function scores(){
+    return $this->hasMany(scroe::class);
+}
+
 }
