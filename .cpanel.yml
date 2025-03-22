@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/babaeialosource/public_html/subfolor
+    - /bin/cpbackup-exclude $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -rf * $DEPLOYPATH
+    - /bin/chown -R babaeialosource:babaeialosource $DEPLOYPATH
+    - /bin/chmod -R 755 $DEPLOYPATH
